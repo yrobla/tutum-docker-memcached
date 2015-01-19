@@ -8,13 +8,13 @@ Base docker image to run a Memcached server
 Usage
 -----
 
-To create the image `tutum/memcached`, execute the following command on the tutum-docker-memcached folder:
+To create the image `yrobla/docker-memcached`, execute the following command on the tutum-docker-memcached folder:
 
-	docker build -t tutum/memcached .
+	docker build -t yrobla/docker-memcached .
 
 To run the image and bind to port 11211:
 
-	docker run -d -p 11211:11211 tutum/memcached
+	docker run -d -p 11211:11211 yrobla/docker-memcached
 
 The first time that you run your container, a new user `memcached` with all privileges 
 will be created in Memcached with a random password. To get the password, check the logs
@@ -43,7 +43,7 @@ Setting a specific password for the admin account
 If you want to use a preset password instead of a random generated one, you can
 set the environment variable `MEMCACHED_PASS` to your specific password when running the container:
 
-	docker run -d -p 11211:11211 -e MEMCACHED_PASS="mypass" tutum/memcached
+	docker run -d -p 11211:11211 -e MEMCACHED_PASS="mypass" yrobla/docker-memcached
 	
 	
 Testing with Python
@@ -53,7 +53,7 @@ First, install `bmemcached`. To do this, use pip or easy_install:
 
     pip install python-binary-memcached
 
-Testing `tutum/memcached`:
+Testing `yrobla/docker-memcached`:
 
 ```python
 >>> import bmemcached
@@ -74,3 +74,7 @@ Migrating an existing Memcached server
 ----------------------------------
 
 Coming soon!
+
+
+FORKED BY Yolanda Robla <info@ysoft.biz>
+To add custom settings

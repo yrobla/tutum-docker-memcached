@@ -1,0 +1,16 @@
+{
+  "network": {
+    "servers": [ "ELK_HOST:49022" ],
+    "timeout": 15,
+    "ssl ca": "/certs/logstash-forwarder.crt"
+  },
+  "files": [
+    {
+      "paths": [
+        "/var/log/supervisor/memcached_err.log",
+        "/var/log/supervisor/memcached_out.log"
+       ],
+      "fields": { "type": "syslog" }
+    }
+  ]
+}
